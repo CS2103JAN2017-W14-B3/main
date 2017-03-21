@@ -1,5 +1,7 @@
 package seedu.doit.model;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
@@ -214,7 +216,6 @@ public class ModelManager extends ComponentManager implements Model {
         this.taskManager.resetData(taskManagerStack.loadNewerTaskManager(this.getTaskManager()));
         updateFilteredTasks();
         indicateTaskManagerChanged();
-    }
 
     private class PriorityQualifier implements Qualifier {
         private Set<String> priorityKeywords;
@@ -226,8 +227,9 @@ public class ModelManager extends ComponentManager implements Model {
         @Override
         public boolean run(ReadOnlyTask task) {
             return this.priorityKeywords.stream()
-                    .filter(keyword -> StringUtil.containsWordIgnoreCase(task.getPriority().value, keyword)).findAny()
-                    .isPresent();
+                .filter(keyword -> StringUtil.containsWordIgnoreCase(task.getPriority().value, keyword))
+                .findAny()
+                .isPresent();
         }
 
         @Override
@@ -246,8 +248,9 @@ public class ModelManager extends ComponentManager implements Model {
         @Override
         public boolean run(ReadOnlyTask task) {
             return this.descriptionKeywords.stream()
-                    .filter(keyword -> StringUtil.containsWordIgnoreCase(task.getDescription().value, keyword))
-                    .findAny().isPresent();
+                .filter(keyword -> StringUtil.containsWordIgnoreCase(task.getDescription().value, keyword))
+                .findAny()
+                .isPresent();
         }
 
         @Override
