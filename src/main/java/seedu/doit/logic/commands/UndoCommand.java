@@ -11,7 +11,8 @@ public class UndoCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Task undone";
     // : %1$s";
-    public static final String MESSAGE_FAILURE = "Unable to undo. There is nothing to undo.\nYou cannot undo a save, find and list.";
+    public static final String MESSAGE_FAILURE = "Unable to undo. There is nothing to undo.\n"
+            + "You cannot undo a save, find and list.";
 
     // public static Command toUndo;
 
