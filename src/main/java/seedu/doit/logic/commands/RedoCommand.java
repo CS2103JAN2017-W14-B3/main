@@ -9,7 +9,7 @@ public class RedoCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + "\n" + "Example: " + COMMAND_WORD;
 
-    public static final String MESSAGE_SUCCESS = "Task redid";
+    public static final String MESSAGE_SUCCESS = "Task redone";
     // : %1$s";
     public static final String MESSAGE_FAILURE = "Unable to redo. There is nothing to redo.";
 
